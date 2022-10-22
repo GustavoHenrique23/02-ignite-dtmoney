@@ -6,10 +6,14 @@ interface HeaderProps {
 }
 
 export function Header({ onOpenNewTransactionModal }: HeaderProps) {
+  function refreshPage() {
+    window.location.reload();
+  }
+
   return (
     <Container>
       <Content>
-        <img src={logoImg} alt="dt money" />
+        <img src={logoImg} alt="dt money" onClick={refreshPage} />
         <button type="submit" onClick={onOpenNewTransactionModal}>
           Nova Transação
         </button>
